@@ -3,8 +3,9 @@ import axios from 'axios'
 
 import Layout from '../components/layout'
 
-export async function getServerSideProps() {
-	const res = await axios.get(`http://localhost:3000/api/get-time`)
+export async function getStaticProps() {
+	const baseUrl = process.env.VERCEL_URL || 'http://localhost:3000'
+	const res = await axios.get(`${baseUrl}/api/get-time`)
 	console.log('---> get time called')
 	// console.log(res)
 	return {
