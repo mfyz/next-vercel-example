@@ -19,8 +19,7 @@ export default class User extends React.Component {
 	}
 
 	getUser() {
-		const baseUrl = process.env.VERCEL_URL || 'http://localhost:3000'
-		const res = axios.get(`${baseUrl}/api/get-user`)
+		const res = axios.get(`/api/get-user`)
 			.then((res) => {
 				setTimeout(() => {
 					this.setState({
@@ -40,7 +39,7 @@ export default class User extends React.Component {
 					<title>User page title</title>
 				</Head>
 				<h1>User</h1>
-				
+
 				{loading && (
 					<div>Loading</div>
 				)}
