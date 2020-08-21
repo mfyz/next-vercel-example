@@ -18,7 +18,7 @@ const Time = (props) => {
 	return (
 		<Layout>
 			<h1>Time</h1>
-			<p>(gets refreshed from server in every page visit)</p>
+			<p>(pre-rendered with data in the build)</p>
 			<pre>
 				{JSON.stringify(props.time, null, 4)}
 			</pre>
