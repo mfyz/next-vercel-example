@@ -3,9 +3,8 @@ import axios from 'axios'
 
 import Layout from '../components/layout'
 
-export async function getStaticProps() {
-	const baseUrl = process.env.VERCEL_URL || 'http://localhost:3000'
-	const res = await axios.get(`${baseUrl}/api/get-user`)
+export async function getServerSideProps() {
+	const res = await axios.get(`/api/get-user`)
 	console.log('---> get user called')
 	// console.log(res)
 	return {
